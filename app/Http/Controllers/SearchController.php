@@ -35,7 +35,11 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title' => 'required'
+        ]);
+
+        return 123;
     }
 
     /**
