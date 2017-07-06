@@ -13,8 +13,12 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-image: url('https://raw.githubusercontent.com/hkhuu1011/Recipes/master/public/img/main_bg.jpg') !important;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: center;
+                background-size: 100% 100%;
+                color: #ffffff;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -79,16 +83,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    {{ config('app.name', 'Recipes') }}
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                {{--<div class="links">--}}
+                    {{--<a href="https://laravel.com/docs">Documentation</a>--}}
+                    {{--<a href="https://laracasts.com">Laracasts</a>--}}
+                    {{--<a href="https://laravel-news.com">News</a>--}}
+                    {{--<a href="https://forge.laravel.com">Forge</a>--}}
+                    {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
+                {{--</div>--}}
             </div>
         </div>
     </body>
