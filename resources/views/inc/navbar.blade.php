@@ -20,8 +20,8 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 <li><a href="/home">Home</a></li>
-                <li><a href="/search">Search</a></li>
-                <li><a href="/results">Results</a></li>
+                <li><a href="/search/create">Search</a></li>
+                <li><a href="/search">Results</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

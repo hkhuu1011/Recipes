@@ -14,7 +14,7 @@ class SearchController extends Controller
      */
     public function index()
     {
-        $search = Search::all();
+        $search = Search::orderBy('created_at', 'desc')->get();
         return view('search.index')->with('search', $search);
     }
     /**
@@ -36,10 +36,15 @@ class SearchController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required'
+            'ingredients' => 'required'
         ]);
 
-        return 123;
+        // Add Search Value
+        $search = new Search;
+        $search->ingredients = $request->input('ingredients');
+        $search->save();
+
+        return redirect('/search')->with('success', 'Searched!');
     }
 
     /**
