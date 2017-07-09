@@ -21,4 +21,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/results', 'PagesController@results');
 
-Route::resource('search', 'SearchController');
+//Route::resource('search', 'SearchController');
+
+Route::get('/search', 'SearchController@search');
+
+Route::get('/searchrecipes', 'SearchController@searchrecipes');

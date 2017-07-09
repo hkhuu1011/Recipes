@@ -4,48 +4,28 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Search;
-use Unirest\Request as Unirest;
 
-
-class SearchController extends Controller
+class apiController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-
      */
-    public function search() {
-        return view('search.create');
-
-    }
-
-    public function searchrecipes(Request $request){
-        $ingredient = $request -> input('ingredients');
-
-        $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=" . urlencode($ingredient) . "&number=20",
-               array(
-                   "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
-                   "Accept" => "application/json"
-               )
-            );
-
-        return view('search.index')->withSearch($response->body);
-    }
-
-    public function selectedrecipe(Request $request){
-
-    }
-
-
     public function index()
     {
-//        Grabbing from database
-//        $search = Search::orderBy('created_at', 'desc')->get();
-//        return view('search.index')->with('search', $search);
-
-
+//        $search = Search::orderBy('created_at', 'desc')->take(1)->get();
+//        $ingredients =
+//        $response = Unirest\Request::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=$search&number=10",
+//            array(
+//                "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
+//                "Accept" => "application/json"
+//            )
+//        );
+//
+//        return json_encode($response->body);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -53,9 +33,7 @@ class SearchController extends Controller
      */
     public function create()
     {
-//        return view('search.create');
-
-
+        //
     }
 
     /**
@@ -66,16 +44,7 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-//        $this->validate($request, [
-//            'ingredients' => 'required'
-//        ]);
-//
-//        // Add Search Value
-//        $search = new Search;
-//        $search->ingredients = $request->input('ingredients');
-//        $search->save();
-//
-//        return redirect('/search')->with('success', 'Searched!');
+        //
     }
 
     /**

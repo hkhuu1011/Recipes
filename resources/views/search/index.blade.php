@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Search Results</h1>
+    <h1>Recipes</h1>
     @if(count($search) > 0)
-        @foreach($search as $search)
+        @foreach($search as $item)
             <div class="well">
-                <h3>{{$search->ingredients }}</h3>
+                <h3>{{$item->title }}</h3>
+                <img src="{{ $item->image }}"/>
             </div>
         @endforeach
     @else
