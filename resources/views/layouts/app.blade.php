@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -24,5 +25,15 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="../../../node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+
+    <script>
+        var container = document.querySelector('#masonry');
+        var masonry = new Masonry(container, {
+            columnWidth: 50,
+            itemSelector: '.item'
+        });
+    </script>
+
 </body>
 </html>

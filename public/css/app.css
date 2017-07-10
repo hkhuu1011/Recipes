@@ -8350,3 +8350,57 @@ button.close {
   }
 }
 
+html,
+body {
+  background-color: #fff4eb;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+.navbar-default,
+.navbar-brand {
+  background-color: #573d3d;
+  border-color: #573d3d;
+  color: #ffffff !important;
+}
+
+.navbar-nav > li > a {
+  color: #cfcfcf !important;
+}
+
+h1,
+a > h4 {
+  color: #573d3d !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.item {
+  float: left;
+  width: 325px !important;
+  margin: 1.5% !important;
+}
+
+a > h4 {
+  margin: 3% 0 0 0;
+}
+
+h5 {
+  margin: 8px 6px 8px 6px;
+}
+
+img {
+  width: 325px !important;
+  border-radius: 15px;
+  margin: 0;
+}
+

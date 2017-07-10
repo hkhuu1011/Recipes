@@ -34,7 +34,16 @@ class SearchController extends Controller
     }
 
     public function selectedrecipe(Request $request){
-
+        echo 'clicked link';
+//        $id = $request -> click('$item->title');
+//        $response = Unirest\::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/{id}/information?includeNutrition=true",
+//            array(
+//                "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
+//                "Accept" => "application/json"
+//            )
+//        );
+//
+//        return view('search.show');
     }
 
 

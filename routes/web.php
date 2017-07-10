@@ -26,3 +26,5 @@ Route::get('/results', 'PagesController@results');
 Route::get('/search', 'SearchController@search');
 
 Route::get('/searchrecipes', 'SearchController@searchrecipes');
+
+Route::get('/selectedrecipe', "SearchController@selectedrecipe");
