@@ -10,6 +10,17 @@ use Unirest\Request as Unirest;
 class SearchController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -32,6 +43,7 @@ class SearchController extends Controller
 
         return view('search.index')->withSearch($response->body);
     }
+
 
     public function selectedrecipe(Request $request){
         echo 'clicked link';

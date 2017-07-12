@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -19,8 +20,9 @@
                 background-position: center;
                 background-size: 100% 100%;
                 color: #ffffff;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-family: 'Nunito', sans-serif;
+                font-weight: 700;
+                text-shadow: 2px 2px #000000;
                 height: 100vh;
                 margin: 0;
             }

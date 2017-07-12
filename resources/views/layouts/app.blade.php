@@ -13,6 +13,9 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">
@@ -25,14 +28,31 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="../../../node_modules/masonry-layout/dist/masonry.pkgd.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
     <script>
-        var container = document.querySelector('#masonry');
-        var masonry = new Masonry(container, {
-            columnWidth: 50,
-            itemSelector: '.item'
-        });
+//        $('.grid').masonry({
+//            itemSelector: '.grid-item',
+//            columnWidth:200
+//        })
+
+//                var container = document.querySelector('#masonry');
+//        var masonry = new Masonry(container, {
+//            columnWidth: 50,
+//            itemSelector: '.item'
+//        });
+
+var test = $('#masonry').masonry({
+    itemSelector: '.item',
+    percentPosition: true,
+    columnWidth: 200
+});
+// layout Masonry after each image loads
+test.imagesLoaded().progress( function() {
+    test.masonry();
+});
+
     </script>
 
 </body>

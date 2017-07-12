@@ -16,6 +16,10 @@ html, body {
   color: #cfcfcf !important;
 }
 
+.navbar-nav > li > a:hover {
+  color: #ffffff !important;
+}
+
 h1, a > h4 {
  color: #573d3d !important;
 }
@@ -31,14 +35,29 @@ a:hover {
   box-sizing: border-box;
 }
 
+//#masonry:after {
+//  content: '';
+//  display: block;
+//  clear: both;
+//}
+
+
 .item {
   float: left;
-  width: 325px !important;
-  margin: 1.5% !important;
+  width: 350px !important;
+  background-color: #ffffff;
+  margin: .75% !important;
+  padding: 1% 0 1% 0;
+  border-radius: 10px;
+}
+
+.item:hover {
+  background-color: #f3e8e0;
+
 }
 
 a > h4 {
-  margin: 3% 0 0 0;
+  margin: 3% 3% 0 3%;
 }
 
 h5{
@@ -47,6 +66,12 @@ h5{
 
 img {
   width: 325px !important;
-  border-radius: 15px;
-  margin: 0;
+  border-radius: 10px;
+  display:block;
+  margin:auto;
+}
+
+.container {
+  padding-left: 2.5%;
+  padding-right: 2%;
 }
