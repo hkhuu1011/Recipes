@@ -27,4 +27,4 @@ Route::get('/search', 'SearchController@search');
 
 Route::get('/searchrecipes', 'SearchController@searchrecipes');
 
-Route::get('/selectedrecipe', "SearchController@selectedrecipe");
+Route::get('/selectedrecipe/{id}', "SearchController@selectedrecipe");

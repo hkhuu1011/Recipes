@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <h1>Recipe Roulette</h1>
     {{--{{dd($data)}}--}}
     @foreach($recipes as $item)
         <div id="masonry">
             <div class="item">
-                <a href="/selectedrecipe"><img class="image" src="{{ $item->image }}"/></a>
-                <a href="/selectedrecipe"><h4>{{ $item->title }}</h4></a>
+                <a href="/selectedrecipe/{{$item->id}}"><img class="image" src="{{ $item->image }}"/></a>
+                <a href="/selectedrecipe/{{$item->id}}"><h4>{{ $item->title }}</h4></a>
             </div>
         </div>
     @endforeach

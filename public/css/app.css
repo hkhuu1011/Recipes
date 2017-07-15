@@ -8376,6 +8376,7 @@ body {
 
 h1,
 a > h4 {
+  font-family: 'Nunito', sans-serif;
   color: #573d3d !important;
 }
 
@@ -8419,5 +8420,14 @@ img {
 .container {
   padding-left: 2.5%;
   padding-right: 2%;
+}
+
+#recipeInfo {
+  background-color: #ffffff;
+}
+
+.recipeImg {
+  float: left;
+  margin: 0 2% 2% 2%;
 }
 
