@@ -1,21 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Selected Recipe</h1>
+    <h1>{{ $selected->title }}</h1>
+{{--    {{dd($data)}}--}}
     {{--{{dd($selected)}}--}}
-    {{--{{$selected}}--}}
-    {{--@foreach($selected as $select)--}}
-        {{--<div id="masonry">--}}
-            {{--<div class="item">--}}
+    {{--{{dd($selected->analyzedInstructions[0]->steps[0]->number)}}--}}
+{{--    {{dd($selected->analyzedInstructions[0]->steps[0]->step)}}--}}
         <div id="recipeInfo">
             <img class="recipeImg" src="{{ $selected->image }}"/>
                 <div class="recipeText">
-                    <h2>{{ $selected->title }}</h2>
-                    <h4>{{ $selected->instructions }}</h4>
+                    <h2>Step-by-Step Instructions</h2>
+                    <p>Total Time: {{ $selected->readyInMinutes }} minutes</p>
+
+                    {{$selected->sourceUrl}}
+
+                    <hr>
+
+                    <ol>
+                        @foreach($selected->analyzedInstructions[0]->steps as $step)
+                                {{$step->number}}. {{$step->step}} <br><br>
+                        @endforeach
+                    </ol>
+
+
                 </div>
         </div>
-            {{--</div>--}}
-        {{--</div>--}}
     {{--@endforeach--}}
 
 @endsection
