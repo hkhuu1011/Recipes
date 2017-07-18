@@ -65,7 +65,7 @@ h5{
   margin: 8px 6px 8px 6px;
 }
 
-img {
+.image {
   width: 325px !important;
   border-radius: 10px;
   display:block;
@@ -85,6 +85,12 @@ img {
 }
 
 .recipeImg {
+  width: 425px !important;
+  border-radius: 10px;
   float: left;
-  margin-right: 2%;
+  margin: 0 2% 2% 0;
+}
+
+.dietaryRestrictions {
+  word-spacing: 8px;
 }

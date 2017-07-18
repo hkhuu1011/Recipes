@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Recipe Roulette</h1>
+    <h1>Randomized Recipes</h1>
     {{--{{dd($data)}}--}}
     @foreach($recipes as $item)
         <div id="masonry">
