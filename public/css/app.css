@@ -8430,13 +8430,18 @@ h5 {
 }
 
 .recipeImg {
-  width: 425px !important;
+  width: 525px !important;
   border-radius: 10px;
-  float: left;
-  margin: 0 2% 2% 0;
+  float: right;
+  margin: 0 0 2% 2%;
 }
 
 .dietaryRestrictions {
   word-spacing: 8px;
+}
+
+ul,
+ol {
+  padding: 0;
 }
 

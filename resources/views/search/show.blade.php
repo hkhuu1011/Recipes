@@ -37,57 +37,72 @@
 
                     <br>
 
+                    {{--Save Recipe Button--}}
+                    {{Form::submit('Save', ['class'=>'btn btn-danger'])}}
+
+                    <br><br>
+
                     {{--Displaying time, servings and source--}}
-                    <p><strong>Total Time: {{ $selected->readyInMinutes }} minutes</strong>
+                    <div class="prepInfo">
+                        <p><strong>Total Time: {{ $selected->readyInMinutes }} minutes</strong>
 
-                    @if(isset($selected->preparationMinutes))
-                        <br>Preparation: {{ $selected->preparationMinutes }} minutes
-                    @endif
+                        @if(isset($selected->preparationMinutes))
+                            <br>Preparation: {{ $selected->preparationMinutes }} minutes
+                        @endif
 
 
-                    @if(isset($selected->preparationMinutes))
-                        <br>Cooking: {{ $selected->cookingMinutes }} minutes
-                    @endif
+                        @if(isset($selected->preparationMinutes))
+                            <br>Cooking: {{ $selected->cookingMinutes }} minutes
+                        @endif
 
-                    @if(isset($selected->servings))
-                        <br>Servings: {{$selected->servings}}
-                    @endif
+                        @if(isset($selected->servings))
+                            <br>Servings: {{$selected->servings}}
+                        @endif
 
-                    @if(isset($selected->sourceUrl))
-                        <br>Source: <a href="{{$selected->sourceUrl}}" target="_blank">
-                                @if(isset($selected->sourceName))
-                                    {{$selected->sourceName}}
-                                @endif</a></p>
-                    @endif
+                        @if(isset($selected->sourceUrl))
+                            <br>Source: <a href="{{$selected->sourceUrl}}" target="_blank">
+                                    @if(isset($selected->sourceName))
+                                        {{$selected->sourceName}}
+                                    @endif</a></p>
+                        @endif
+                    </div>
 
                     <hr>
 
                     {{--Listing Ingredients--}}
-                    <h2>Ingredients</h2>
-                    @foreach($selected->extendedIngredients as $ingredient)
-                        {{$ingredient->originalString}} <br>
-                    @endforeach
+                    <div class="ingredients">
+                        <h2>Ingredients</h2>
+                        @foreach($selected->extendedIngredients as $ingredient)
+                            {{$ingredient->originalString}} <br>
+                        @endforeach
+                    </div>
 
                     <hr>
 
                     {{--Listing Instructions--}}
-                    <h2>Instructions</h2>
-                    <ol>
-                        @foreach($selected->analyzedInstructions[0]->steps as $step)
-                                {{$step->number}}. {{$step->step}} <br><br>
-                        @endforeach
-                    </ol>
+                    <div class="instructions">
+                        <h2>Instructions</h2>
+                        <ol>
+                            @foreach($selected->analyzedInstructions[0]->steps as $step)
+                                    {{$step->number}}. {{$step->step}} <br>
+                            @endforeach
+                        </ol>
+                    </div>
 
                     <hr>
 
                     {{--Listing Nutritional Information--}}
-                    <h2>Nutritional Information</h2>
-                    @foreach($selected->nutrition->nutrients as $nutrition)
-                        {{$nutrition->amount}} {{$nutrition->unit}} {{$nutrition->title}}<br>
-{{--                        @if($selected->nutrition->nutrients[7])--}}
-                            {{--@break($selected->nutrition->nutrients[7]);--}}
-                        {{--@endif--}}
-                    @endforeach
+                    <div class="nutritionalInfo">
+                        <h2>Nutritional Information</h2>
+                        @if(isset($selected->nutrition->nutrients))
+                            @foreach($selected->nutrition->nutrients as $nutrition)
+                                {{$nutrition->amount}} {{$nutrition->unit}} {{$nutrition->title}}<br>
+        {{--                        @if($selected->nutrition->nutrients[7])--}}
+                                    {{--@break($selected->nutrition->nutrients[7]);--}}
+                                {{--@endif--}}
+                            @endforeach
+                        @endif
+                    </div>
 
                 </div>
         </div>
