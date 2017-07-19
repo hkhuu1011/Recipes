@@ -29,3 +29,4 @@ Route::get('/searchrecipes', 'SearchController@searchrecipes');
 
 Route::get('/selectedrecipe/{id}', 'SearchController@selectedrecipe');
 
+Route::get('/saved', 'SearchController@index');

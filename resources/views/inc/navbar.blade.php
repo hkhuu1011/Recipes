@@ -21,7 +21,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="/home">Home</a></li>
                 <li><a href="/search">Search</a></li>
-                {{--<li><a href="/search">Saved Recipes</a></li>--}}
+                <li><a href="/saved">Saved</a></li>
             </ul>
 
             <!-- Right Side Of Navbar -->

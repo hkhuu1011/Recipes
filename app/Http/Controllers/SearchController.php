@@ -62,10 +62,9 @@ class SearchController extends Controller
 
     public function index()
     {
-//        Grabbing from database
-//        $search = Search::orderBy('created_at', 'desc')->get();
-//        return view('search.index')->with('search', $search);
 
+        return Search::all();
+        return view('search.saved');
 
     }
     /**
