@@ -15,7 +15,8 @@ class CreateSearchesTable extends Migration
     {
         Schema::create('searches', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('ingredients');
+            $table->integer('recipe_id');
+            $table->string('sourceUrl');
             $table->timestamps();
         });
     }
