@@ -6,7 +6,7 @@
     {{--<form action="/searchrecipes" method="GET">--}}
     {{--<div class="form-group">--}}
         {{--<input type="text" name="ingredients"/>--}}
-        {{--<button type="submit">Submit</button>--}}
+            {{--<button type="submit">Submit</button>--}}
     {{--</div>--}}
     {{--</form>--}}
 
