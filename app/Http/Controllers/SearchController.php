@@ -59,12 +59,21 @@ class SearchController extends Controller
         return view('search.show')->withSelected($response->body);
     }
 
+    public function saverecipe($id)
+    {
+        $search = new Search;
+        $search->recipe_id = $id;
+        $search->save();
+
+        return redirect('/saved')->with('success', 'Recipe Saved!');
+    }
+
 
     public function index()
     {
 
-        return Search::all();
-        return view('search.saved');
+        $searches = Search::all();
+        return view('search.saved')->with('searches', $searches);
 
     }
     /**
@@ -88,15 +97,20 @@ class SearchController extends Controller
     public function store(Request $request)
     {
 //        $this->validate($request, [
-//            'ingredients' => 'required'
+//            'submit' => 'required'
 //        ]);
 //
 //        // Add Search Value
 //        $search = new Search;
 //        $search->ingredients = $request->input('ingredients');
 //        $search->save();
+
+//        $search = new Search;
+//        $search->recipe_id = $request->input('id');
+//        $search->sourceUrl = $request->input('');
+//        $search->save();
 //
-//        return redirect('/search')->with('success', 'Searched!');
+//        return redirect('/saved')->with('success', 'Recipe Saved!');
     }
 
     /**
