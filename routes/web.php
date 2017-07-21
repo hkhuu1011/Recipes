@@ -30,3 +30,7 @@ Route::get('/searchrecipes', 'SearchController@searchrecipes');
 Route::get('/selectedrecipe/{id}', 'SearchController@selectedrecipe');
 
 Route::get('/saved', 'SearchController@index');
+
+//Route::post('/saved', 'SearchController@store');
+
+Route::get('/save-recipe/{id}', 'SearchController@saverecipe');
