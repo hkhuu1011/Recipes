@@ -28,6 +28,8 @@ class CreateSearchesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('searches');
+        Schema::table('searches', function (Blueprint $table) {
+            $table->dropColumn('sourceUrl');
+        });
     }
 }
