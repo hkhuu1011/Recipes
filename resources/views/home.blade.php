@@ -4,7 +4,7 @@
     <h1>Randomized Recipes</h1>
     {{--{{dd($data)}}--}}
     @foreach($recipes as $item)
-        <div id="masonry">
+        <div id="imagegrid">
             <div class="item">
                 <a href="/selectedrecipe/{{$item->id}}"><img class="image" src="{{ $item->image }}"/></a>
                 <a href="/selectedrecipe/{{$item->id}}"><h4>{{ $item->title }}</h4></a>

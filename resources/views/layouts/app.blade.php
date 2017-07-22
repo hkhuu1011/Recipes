@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
 
     {{--CDN jquery--}}
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    {{--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>--}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -33,32 +34,11 @@
     <script src="/../../js/custom.js"></script>
 
     <script src="{{ asset('js/app.js') }}"></script>
-    <script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+    {{--<script type="text/javascript" src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>--}}
+    {{--<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>--}}
     {{--<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>--}}
 
-    <script>
-        $('.grid').masonry({
-            itemSelector: '.grid-item',
-            columnWidth:200
-        })
-
-                var container = document.querySelector('#masonry');
-        var masonry = new Masonry(container, {
-            columnWidth: 50,
-            itemSelector: '.item'
-        });
-
-//var test = $('#masonry').masonry({
-//    itemSelector: '.item',
-//    percentPosition: true,
-//    columnWidth: 200
-//});
-//// layout Masonry after each image loads
-//test.imagesLoaded().progress( function() {
-//    test.masonry();
-//});
-
-    </script>
 
 </body>
 </html>
