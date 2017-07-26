@@ -34,7 +34,7 @@ class SearchController extends Controller
     public function searchrecipes(Request $request){
         $ingredient = $request -> input('ingredients');
 
-        $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=" . urlencode($ingredient) . "&number=10",
+        $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=" . urlencode($ingredient) . "&number=20",
                array(
                    "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
                    "Accept" => "application/json"
@@ -59,13 +59,18 @@ class SearchController extends Controller
         return view('search.show')->withSelected($response->body);
     }
 
-    public function saverecipe($id)
+    public function saverecipe($id, $title, $image)
     {
         $search = new Search;
         $search->recipe_id = $id;
+        $search->title = $title;
+        $search->image = $image;
         $search->save();
 
-        return redirect('/saved')->with('success', 'Recipe Saved!');
+        $searches = Search::all();
+        return redirect('/saved')->with('searches', $searches);
+
+//        return redirect('/saved')->with('success', 'Recipe Saved!');
     }
 
 

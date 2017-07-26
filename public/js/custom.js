@@ -2,7 +2,7 @@ $(document).ready(function () {
     // alert('load!');
 
     // Get recipe_id from database
-    $.get();
+    $.get('recipe_id');
 
     // Function to concatenate id to API
     function recipeDatabase() {

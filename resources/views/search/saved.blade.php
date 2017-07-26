@@ -2,27 +2,20 @@
 
 @section('content')
     <h1>Saved Recipes</h1>
-    {{--@if(count($searches) > 0)--}}
-        {{--@foreach($searches as $search)--}}
-             {{--<p>{{$search->recipe_id}}</p>--}}
-        {{--@endforeach--}}
-    {{--@else--}}
-        {{--<p>No Recipes Saved</p>--}}
-    {{--@endif--}}
+    @if(count($searches) > 0)
+        @foreach($searches as $search)
+            <div id="imagegrid">
+                <div class="item">
+                    <img class="image" src="{{$search->image}}"/>
+                    <h4>{{$search->title}}</h4>
+                     {{--<p>{{$search->recipe_id}}</p>--}}
+                </div>
+            </div>
+        @endforeach
+    @else
+        <p>No Recipes Saved</p>
+    @endif
     <div class="display">
-<!--        --><?php
-//            $recipeId = "SELECT * FROM searches";
-//            $result = mysqli_query($conn, $recipeId);
-//            if(mysqli_num_rows($result) > 0) {
-//                while ($row = mysqli_fetch_assoc($result )) {
-//                    echo "<p>";
-//                    echo $row['recipe'];
-//                    echo "</p>";
-//                }
-//            } else {
-//                echo "There are no recipes saved";
-//            }
-//        ?>
 
     </div>
 @endsection

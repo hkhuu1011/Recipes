@@ -39,7 +39,7 @@
 
                     {{--Save Recipe Button--}}
                     {{--{{Form::submit('Save', ['class'=>'btn btn-danger'])}} --}}
-                    <a href="{{url('/save-recipe/' . $selected->id)}}" class="btn btn-danger saveMe">Save me!</a>
+                    <a href="{{url('/save-recipe/' . $selected->id . '/' . $selected->title . '/' . $selected->image)}}" class="btn btn-danger saveMe">Save me!</a>
 
 
                     <br><br>

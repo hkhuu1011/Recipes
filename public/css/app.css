@@ -8392,6 +8392,7 @@ a:hover {
 .item {
   float: left;
   width: 350px !important;
+  height: 390px !important;
   background-color: #ffffff;
   margin: .75% !important;
   padding: 1% 0 1% 0;
@@ -8403,7 +8404,7 @@ a:hover {
 }
 
 a > h4 {
-  margin: 3% 3% 0 3%;
+  margin: 3%;
 }
 
 h5 {
@@ -8412,14 +8413,20 @@ h5 {
 
 .image {
   width: 325px !important;
+  max-height: 325px !important;
+  -o-object-fit: cover;
+  object-fit: cover;
   border-radius: 10px;
   display: block;
   margin: auto;
 }
 
+img[class] {
+  height: 100%;
+}
+
 .container {
-  padding-left: 2.5%;
-  padding-right: 2%;
+  padding: 0 2% 0 2.5%;
 }
 
 #recipeInfo {
@@ -8427,6 +8434,7 @@ h5 {
   border-radius: 10px;
   padding: 2%;
   overflow: auto;
+  margin-bottom: 5%;
 }
 
 .recipeImg {

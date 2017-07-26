@@ -16,7 +16,8 @@ class CreateSearchesTable extends Migration
         Schema::create('searches', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('recipe_id');
-            $table->string('sourceUrl');
+            $table->string('title');
+            $table->string('image');
             $table->timestamps();
         });
     }
@@ -28,8 +29,6 @@ class CreateSearchesTable extends Migration
      */
     public function down()
     {
-        Schema::table('searches', function (Blueprint $table) {
-            $table->dropColumn('sourceUrl');
-        });
+        Schema::dropIfExists('searches');
     }
 }

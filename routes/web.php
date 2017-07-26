@@ -33,4 +33,6 @@ Route::get('/saved', 'SearchController@index');
 
 //Route::post('/saved', 'SearchController@store');
 
-Route::get('/save-recipe/{id}', 'SearchController@saverecipe');
+//Route::get('/save-recipe/{id}', 'SearchController@saverecipe');
+
+Route::get('/save-recipe/{id}/{title}/{image}', 'SearchController@saverecipe')->where('image', '(.*)');
