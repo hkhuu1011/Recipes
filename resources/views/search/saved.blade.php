@@ -6,8 +6,8 @@
         @foreach($searches as $search)
             <div id="imagegrid">
                 <div class="item">
-                    <img class="image" src="{{$search->image}}"/>
-                    <h4>{{$search->title}}</h4>
+                    <a href="/selectsaved/{{$search->recipe_id}}"><img class="image" src="{{$search->image}}"/></a>
+                    <a href="/selectsaved/{{$search->recipe_id}}"><h4>{{$search->title}}</h4></a>
                      {{--<p>{{$search->recipe_id}}</p>--}}
                 </div>
             </div>

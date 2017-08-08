@@ -36,3 +36,7 @@ Route::get('/saved', 'SearchController@index');
 //Route::get('/save-recipe/{id}', 'SearchController@saverecipe');
 
 Route::get('/save-recipe/{id}/{title}/{image}', 'SearchController@saverecipe')->where('image', '(.*)');
+
+Route::get('/selectsaved/{id}', 'SearchController@selectsaved');
+
+Route::post('save-notes/{id}/{notes}');

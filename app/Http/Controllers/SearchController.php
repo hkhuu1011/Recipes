@@ -26,15 +26,17 @@ class SearchController extends Controller
      * @return \Illuminate\Http\Response
 
      */
-    public function search() {
+    public function search()
+    {
         return view('search.create');
 
     }
 
-    public function searchrecipes(Request $request){
+    public function searchrecipes(Request $request)
+    {
         $ingredient = $request -> input('ingredients');
 
-        $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=" . urlencode($ingredient) . "&number=20",
+        $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=true&ingredients=" . urlencode($ingredient) . "&number=21",
                array(
                    "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
                    "Accept" => "application/json"
@@ -45,7 +47,8 @@ class SearchController extends Controller
     }
 
 
-    public function selectedrecipe($id){
+    public function selectedrecipe($id)
+    {
         $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" . $id . "/information?includeNutrition=true",
             array(
                 "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
@@ -67,10 +70,27 @@ class SearchController extends Controller
         $search->image = $image;
         $search->save();
 
-        $searches = Search::all();
+//        $searches = Search::all();
+        $searches = Search::orderBy('created_at', 'desc')->get();
         return redirect('/saved')->with('searches', $searches);
 
 //        return redirect('/saved')->with('success', 'Recipe Saved!');
+    }
+
+    public function selectsaved($recipe_id)
+    {
+        $response = Unirest::get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/" . $recipe_id . "/information?includeNutrition=true",
+            array(
+                "X-Mashape-Key" => "9ub7D5HCt5mshVvYO5Gq6ApS1GvRp1ZIouOjsnN9KNREY35tAc",
+                "Accept" => "application/json"
+            )
+        );
+
+//        print_r ($response->body->analyzedInstructions[0]);
+//        return view('search.show', ['data' => $response->body]);
+
+        return view('search.edit')->withSelected($response->body);
+
     }
 
 
