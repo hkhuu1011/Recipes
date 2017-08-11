@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Search;
+use App\Note;
 use Unirest\Request as Unirest;
 
 
@@ -91,6 +92,18 @@ class SearchController extends Controller
 
         return view('search.edit')->withSelected($response->body);
 
+    }
+
+    public function savenotes($id, $notes)
+    {
+        $note = new Note;
+        $note->recipe_id = $id;
+        $note->notes = $notes;
+        $note->save();
+
+        $notes = Note::all();
+        return redirect('search.edit')->withSelected('notes', $notes);
+//        return view('search.edit');
     }
 
 

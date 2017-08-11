@@ -39,4 +39,4 @@ Route::get('/save-recipe/{id}/{title}/{image}', 'SearchController@saverecipe')->
 
 Route::get('/selectsaved/{id}', 'SearchController@selectsaved');
 
-Route::post('save-notes/{id}/{notes}');
+Route::post('save-notes/{id}/{notes}', 'SearchController@savenotes');
