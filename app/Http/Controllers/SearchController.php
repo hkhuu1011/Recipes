@@ -94,17 +94,28 @@ class SearchController extends Controller
 
     }
 
-    public function savenotes($id, $notes)
+    public function savenotes($id, Request $request)
     {
+        $this->validate($request, [
+            'notes' => 'required'
+        ]);
+
+        // Create Notes
         $note = new Note;
         $note->recipe_id = $id;
-        $note->notes = $notes;
+        $note->notes = $request->input('notes');
+
         $note->save();
 
-        $notes = Note::all();
-        return redirect('search.edit')->withSelected('notes', $notes);
-//        return view('search.edit');
+        return redirect('/selectsaved/{id}')->with('success', 'Notes Saved!');
+
     }
+
+//    public function notes()
+//    {
+//        $notes = Note::all();
+//        return view('search.notes')->with('notes', $notes);
+//    }
 
 
     public function index()

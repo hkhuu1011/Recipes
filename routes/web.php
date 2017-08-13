@@ -31,12 +31,13 @@ Route::get('/selectedrecipe/{id}', 'SearchController@selectedrecipe');
 
 Route::get('/saved', 'SearchController@index');
 
-//Route::post('/saved', 'SearchController@store');
-
-//Route::get('/save-recipe/{id}', 'SearchController@saverecipe');
-
 Route::get('/save-recipe/{id}/{title}/{image}', 'SearchController@saverecipe')->where('image', '(.*)');
 
 Route::get('/selectsaved/{id}', 'SearchController@selectsaved');
 
-Route::post('save-notes/{id}/{notes}', 'SearchController@savenotes');
+//Route::get('/save-notes/{id}/{notes}/{title}/{image}', 'SearchController@savenotes')->where('image', '(.*)');
+Route::get('/save-notes', 'SearchController@savenotes');
+
+//Route::get('/save-notes/{id}', 'SearchController@notes');
+
+//Route::get('/notes', 'SearchController@notes');

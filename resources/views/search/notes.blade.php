@@ -42,31 +42,28 @@
             {{--<a href="{{url('/notes/' . $selected->id . '/' . $selected->recipe_id . '/' . $selected->notes)}}" class="btn btn-danger notes">Add Notes!</a>--}}
 
             {{--Modal to add notes--}}
-            <!-- Button trigger modal -->
+        <!-- Button trigger modal -->
             <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">
                 Add Notes!
             </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        {!! Form::open(['action' => 'SearchController@savenotes', 'method' => 'POST']) !!}
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Modify Your Recipe</h4>
-                        </div>
-                        <div class="modal-body">
-
-                            <div class="form-group">
+            {{--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">--}}
+                {{--<div class="modal-dialog" role="document">--}}
+                    {{--<div class="modal-content">--}}
+                        {{--<div class="modal-header">--}}
+                            {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
+                            {{--<h4 class="modal-title" id="myModalLabel">Modify Your Recipe</h4>--}}
+                        {{--</div>--}}
+                        {{--<div class="modal-body">--}}
+                            {{--Input box--}}
+                            {{--<div class="form-group">--}}
                                 {{--<label for="comment">Add Changes:</label>--}}
                                 {{--<textarea class="form-control" rows="5" id="comment"></textarea>--}}
-                                {{Form::label('label', 'Add Changes')}}
-                                {{Form::textarea('notes', '', ['class' => 'form-control', 'placeholder' => 'Add 1/2 cup instead'])}}
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="modal-footer">--}}
+                            {{--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--}}
                             {{--<button type="button" class="btn btn-danger">Save Changes</button>--}}
                             {{--<a href="{{url('/save-notes/' .--}}
                                             {{--$selected->id . '/' .--}}
@@ -75,12 +72,10 @@
                                             {{--$selected->image--}}
                                             {{--)}}--}}
                                     {{--" class="btn btn-danger notes">Save Changes</a>--}}
-                            {{Form::submit('Submit', ['class' => 'btn btn-danger'])}}
-                        </div>
-                        {!! Form::close() !!}
-                    </div>
-                </div>
-            </div>
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
 
 
 
