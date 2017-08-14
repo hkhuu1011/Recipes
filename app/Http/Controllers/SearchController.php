@@ -107,7 +107,7 @@ class SearchController extends Controller
 
         $note->save();
 
-        return redirect('/selectsaved/{id}')->with('success', 'Notes Saved!');
+        return redirect('/selectsaved/'. $id)->with('success', 'Notes Saved!');
 
     }
 

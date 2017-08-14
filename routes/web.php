@@ -36,7 +36,7 @@ Route::get('/save-recipe/{id}/{title}/{image}', 'SearchController@saverecipe')->
 Route::get('/selectsaved/{id}', 'SearchController@selectsaved');
 
 //Route::get('/save-notes/{id}/{notes}/{title}/{image}', 'SearchController@savenotes')->where('image', '(.*)');
-Route::get('/save-notes', 'SearchController@savenotes');
+Route::post('/save-notes/{id}', 'SearchController@savenotes');
 
 //Route::get('/save-notes/{id}', 'SearchController@notes');
 

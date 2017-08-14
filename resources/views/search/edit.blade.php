@@ -51,7 +51,7 @@
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        {!! Form::open(['action' => 'SearchController@savenotes', 'method' => 'POST']) !!}
+                        {!! Form::open(['action' => array('SearchController@savenotes', 'id' => $selected->id), 'method' => 'POST']) !!}
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title" id="myModalLabel">Modify Your Recipe</h4>
@@ -112,6 +112,9 @@
             </div>
 
             <hr>
+
+            {{--Listing Notes if available--}}
+
 
             {{--Listing Ingredients--}}
             <div class="ingredients">
