@@ -89,8 +89,8 @@ class SearchController extends Controller
 
 //        print_r ($response->body->analyzedInstructions[0]);
 //        return view('search.show', ['data' => $response->body]);
-
-        return view('search.edit')->withSelected($response->body);
+        $notes = Note::all();
+        return view('search.edit')->withSelected($response->body)->with('notes', $notes);
 
     }
 
@@ -107,14 +107,17 @@ class SearchController extends Controller
 
         $note->save();
 
+//        $notes = Note::orderBy('created_at', 'desc')->get();
         return redirect('/selectsaved/'. $id)->with('success', 'Notes Saved!');
+//        return redirect('/selectsaved/'. $id)->with('notes', $notes);
 
     }
 
-//    public function notes()
+//    public function notes($id)
 //    {
 //        $notes = Note::all();
-//        return view('search.notes')->with('notes', $notes);
+//        $notes = Note::orderBy('created_at', 'desc')->get();
+//        return redirect('/selectsaved/'. $id)->withSelected('notes', $notes);
 //    }
 
 
@@ -132,9 +135,7 @@ class SearchController extends Controller
      */
     public function create()
     {
-//        return view('search.create');
-
-
+        //
     }
 
     /**
@@ -145,21 +146,7 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-//        $this->validate($request, [
-//            'submit' => 'required'
-//        ]);
-//
-//        // Add Search Value
-//        $search = new Search;
-//        $search->ingredients = $request->input('ingredients');
-//        $search->save();
-
-//        $search = new Search;
-//        $search->recipe_id = $request->input('id');
-//        $search->sourceUrl = $request->input('');
-//        $search->save();
-//
-//        return redirect('/saved')->with('success', 'Recipe Saved!');
+        //
     }
 
     /**

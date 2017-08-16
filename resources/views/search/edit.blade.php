@@ -114,7 +114,17 @@
             <hr>
 
             {{--Listing Notes if available--}}
-
+            @if(count($notes) > 0)
+                @foreach($notes as $note)
+                    <div class="notes">
+                        <h2>Notes</h2>
+                        <p>{{$note->notes}}</p>
+                        <small>Saved on: {{$note->created_at}}</small>
+                    </div>
+                @endforeach
+            @else
+                <p>No Notes Found</p>
+            @endif
 
             {{--Listing Ingredients--}}
             <div class="ingredients">
