@@ -89,7 +89,9 @@ class SearchController extends Controller
 
 //        print_r ($response->body->analyzedInstructions[0]);
 //        return view('search.show', ['data' => $response->body]);
-        $notes = Note::all();
+//        $notes = Note::all();
+//        $notes = Note::find($recipe_id)->where('recipe_id');
+        $notes = Note::where('recipe_id', '=', $recipe_id)->get();
         return view('search.edit')->withSelected($response->body)->with('notes', $notes);
 
     }
